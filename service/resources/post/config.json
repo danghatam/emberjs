@@ -1,0 +1,29 @@
+{
+	"type": "Collection",
+	"properties": {
+		"userid": {
+			"name": "userid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "userid",
+			"order": 0
+		},
+		"content": {
+			"name": "content",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "content",
+			"order": 1
+		},
+		"datetime": {
+			"name": "datetime",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "datetime",
+			"order": 2
+		}
+	}
+}
