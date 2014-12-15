@@ -5,22 +5,50 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 	<script type="text/x-handlebars" id="application">
-		<h1>FACEBOOK</h1>
+		<div class="header">
+			<h1 class="logo">FACEBOOK</h1>
+		</div>
 		<div class="container">
 			{{outlet}}
 		</div>
 	</script>
-	<script type="text/x-handlebars" id="index">
+	<script type="text/x-handlebars" id="posts">
+		{{#each content in posts}}
 		<div class="status-wrapper">
-			<div class="post">
-				<img />
-				<div class="post-wrapper">
-
+			<div class="post-wrapper">
+				<div class="head-post">
+					<img {{bind-attr src=content._data.avatar}} />
+					<p class="name">{{content._data.username}}</p>
+					{{#link-to 'post' content}}<p class="time">{{content._data.time}}</p>{{/link-to}}
+					<div class="clear"></div>
+				</div>
+				<div class="body-post">
+					<p class="content">{{content._data.content}}</p>
+				</div>
+			</div>
+			<div class="comment-wrapper">
+				<div class="comment">
+				</div>
+			</div>
+		</div>
+		{{/each}}
+	</script>
+	<script type="text/x-handlebars" id="post">
+		<div class="status-wrapper">
+			<div class="post-wrapper">
+				<div class="head-post">
+					<img {{bind-attr src=content._data.avatar}} />
+					<p class="name">{{content._data.username}}</p>
+					{{#link-to 'post' content}}<p class="time">{{content._data.time}}</p>{{/link-to}}
+				</div>
+				<div class="clear"></div>
+				<div class="body-post">
+					<p class="content">{{content._data.content}}</p>
 				</div>
 			</div>
 			<div class="comment-wrapper">
@@ -31,6 +59,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
 	<script src="//cdn.jsdelivr.net/emberjs/1.9.0-beta.1/ember.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.12/ember-data.js"></script>
 	<script src="scripts/app.js"></script>
 </body>
 

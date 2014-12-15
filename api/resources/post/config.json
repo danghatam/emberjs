@@ -1,0 +1,45 @@
+{
+	"type": "Collection",
+	"properties": {
+		"username": {
+			"name": "username",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "username",
+			"order": 0
+		},
+		"avatar": {
+			"name": "avatar",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "avatar",
+			"order": 1
+		},
+		"content": {
+			"name": "content",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "content",
+			"order": 2
+		},
+		"time": {
+			"name": "time",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "time",
+			"order": 3
+		},
+		"comments": {
+			"name": "comments",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "comments",
+			"order": 4
+		}
+	}
+}

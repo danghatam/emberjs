@@ -1,0 +1,35 @@
+*{
+	margin:0;
+	padding:0;
+}
+.clear{
+	clear:both;
+}
+h1.logo{
+	background:#3a5795;
+	color:#fff;
+	width:100%;
+}
+.container{
+	background:#dcdcdc;
+	padding: 10px 20%;
+}
+.status-wrapper{
+	background: #fff;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+.post-wrapper img{
+	float:left;
+	width:50px;
+	margin-right:10px;
+}
+.head-post{
+	margin-bottom:10px;
+}
+.body-post{
+	padding-left:10px;
+}
+.comment-wrapper{
+	background-color:#e5e0e0;
+}
