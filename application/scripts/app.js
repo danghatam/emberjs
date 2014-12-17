@@ -15,46 +15,9 @@ App.ApplicationStore = DS.Store.extend({
 });
 App.Router.map(function(){
 	this.resource("timeline");
-	this.resource("posts");
-	this.resource('post', { path: '/post/:post_id' });
-});
-App.Post = DS.Model.extend({
-	username: DS.attr('string'),
-	avatar: DS.attr('string'),
-	time: DS.attr('string'),
-	content: DS.attr('string'),
-	comments: DS.hasMany('comment', {async: true})
-});
-App.User = DS.Model.extend({
-	name: DS.attr('string'),
-	avatar: DS.attr('string')
-});
-App.Comment = DS.Model.extend({
-	content: DS.attr('string'),
-	post: DS.belongsTo('post', {async: true})
-});
-App.IndexRoute = Ember.Route.extend({
-	redirect: function(){
-		this.transitionTo("posts");
-	}
-});
-App.PostsRoute = Ember.Route.extend({
-	model: function(){
-		return this.store.find('post');
-	},
-	setupController: function(controller, model){
-		model.content[0].get('comments').then(function(comments){console.log(comments);});
-		controller.set("posts", model.content);
-	}
-});
-App.PostRoute = Ember.Route.extend({
-	model: function(params){
-		return this.store.find('post',params.post_id);
-	},
-	setupController: function(controller, model){
-		console.log(model);
-		controller.set("content", model);
-	}
+	this.resource("posts", function(){
+		this.resource('post', { path: '/post/:post_id' });
+	});
 });
 App.TimelineRoute = Ember.Route.extend({
 	model: function(){
@@ -68,4 +31,19 @@ App.TimelineRoute = Ember.Route.extend({
 //		}
 //	}
 //});
-
+App.CommentController = Ember.Controller.extend({
+	actions:{
+		save: function(post){
+			var u = post.get('user');
+			console.log(post);
+			console.log(u);
+			var comment = this.store.createRecord('comment',{
+				content: this.get('inputComment'),
+				post: post,
+				user: u
+			});
+			this.set('inputComment','');
+			comment.save();
+		}
+	}
+});

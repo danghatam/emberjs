@@ -16,6 +16,14 @@
 			"required": false,
 			"id": "post",
 			"order": 1
+		},
+		"user": {
+			"name": "user",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "user",
+			"order": 2
 		}
 	}
 }

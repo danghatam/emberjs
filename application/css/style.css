@@ -9,6 +9,7 @@ h1.logo{
 	background:#3a5795;
 	color:#fff;
 	width:100%;
+	padding-left:10px;
 }
 .container{
 	background:#dcdcdc;
@@ -19,7 +20,10 @@ h1.logo{
 	margin-bottom: 20px;
 	padding: 10px;
 }
-.post-wrapper img{
+.post-wrapper{
+	margin-bottom:10px;
+}
+.post-wrapper img, .comment img, .action-view img{
 	float:left;
 	width:50px;
 	margin-right:10px;
@@ -31,5 +35,9 @@ h1.logo{
 	padding-left:10px;
 }
 .comment-wrapper{
-	background-color:#e5e0e0;
+	background-color:#ece8e8;
+}
+.comment{
+	padding:5px 0;
+	border-bottom:1px solid #fff;
 }

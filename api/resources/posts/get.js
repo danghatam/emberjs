@@ -1,3 +1,3 @@
-dpd.post.get(function(post) {
-    setResult({posts: post});
+dpd.post.get(function(rs) {
+    setResult({posts: rs});
 });
